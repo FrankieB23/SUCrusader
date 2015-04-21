@@ -38,6 +38,7 @@ public class MainActivity extends ListActivity {
         RssItem r = (RssItem) getListAdapter().getItem(position);
         Intent i = new Intent (MainActivity.this, GetIntent.class);
         i.putExtra("Content",position);
+        startActivity(i);
 
 
 
