@@ -2,14 +2,15 @@ package edu.susqu.math.kubota.xmltester;
 
 import android.app.Activity;
 import android.app.ListActivity;
+import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.view.Menu;
+import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
-
 import java.util.ArrayList;
 
 
@@ -28,9 +29,44 @@ public class MainActivity extends ListActivity {
                 items);
         setListAdapter(adapter);
         this.
-        new FetchItemsTask().execute();
+                new FetchItemsTask().execute();
     }
 
+
+    @Override
+    public void onListItemClick(ListView l, View v, int position, long id) {
+        RssItem r = (RssItem) getListAdapter().getItem(position);
+        Intent i = new Intent (MainActivity.this, GetIntent.class);
+        i.putExtra("Content",position);
+
+
+
+
+              //Tag,r.getContent();
+                //.getItem(position);
+
+        //{setContentView(R.layout.abc_expanded_menu_layout);
+     // setContentView(R.layout.content_main);
+     // adapter = new ArrayAdapter<RssItem>(        //return(TAG, r.getContent());??
+     // this, android.R.
+        // if (onListItemClick();)
+        //Inflate(Listview?) ??
+        //Log.d(TAG, r.getTitle() + "was clicked "); // title + was clicked
+       Log.d(TAG, r.getContent()); // article
+        Log.d(TAG, r.toString());    //RssItem = r
+      // there are other . task that you can do.
+    }
+ //   @Override
+ //   public void onClick(View v){
+  //      Intent i = new Intent (MainActivity.this, GetIntent.class);
+   //     i.putExtra("Content" = getListAdapter().getItem(position);
+   // }
+
+  // private class ContentAdapter extends ArrayAdapter<RssItem> {
+       // public ContentAdapter(ArrayList<RssItem> items){
+     //       super(,0,items);
+   // }
+//}
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -54,14 +90,7 @@ public class MainActivity extends ListActivity {
         return super.onOptionsItemSelected(item);
     }
 
-    @Override
-    public void onListItemClick(ListView l, View v, int position, long id) {
-        RssItem r = (RssItem) getListAdapter().getItem(position);
-       // if (onListItemClick();)
-       //Log.d(TAG, r.toString());
 
-
-    }
 
 
     private class FetchItemsTask extends AsyncTask<Void, Void, ArrayList<RssItem>> {

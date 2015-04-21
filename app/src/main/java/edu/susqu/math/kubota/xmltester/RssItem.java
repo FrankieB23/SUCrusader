@@ -1,8 +1,5 @@
 package edu.susqu.math.kubota.xmltester;
 
-import android.view.View;
-import android.widget.ListView;
-
 /**
  * Created by kubota on 3/20/2015.
  */
@@ -60,10 +57,15 @@ public class RssItem {
         this.category = category;
     }
 
-    @Override
+
+    //@Override
     public String toString() {
-        return "Title=" + title + "\npubDate=" + pubDate + "\nCategory=" + category +
-                "\nLink=" + link + "\n";
-                //+ "\nContent=" + content + "\n";
-    }
+        return category + "\n" + title + "\n" + pubDate +
+                "\n";
+        //"\nLink=" + link
+        //+ "\nContent=" + content + "\n";  // content == article ...
+        /** "\nCategory=" +  category + "\"  + "Title="    title +  "\npubDate="  +  pubDate +
+         "\n"; */
+          }
+  //  }
 }
