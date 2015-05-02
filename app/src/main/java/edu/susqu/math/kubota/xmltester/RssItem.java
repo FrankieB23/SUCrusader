@@ -61,9 +61,9 @@ public class RssItem {
     //@Override
     public String toString() {
         return category + "\n" + title + "\n" + pubDate +
-                "\n";
+                "\n"+
         //"\nLink=" + link
-        //+ "\nContent=" + content + "\n";  // content == article ...
+         "\npubDate="  +  pubDate +"\n";   // content == article ...
         /** "\nCategory=" +  category + "\"  + "Title="    title +  "\npubDate="  +  pubDate +
          "\n"; */
           }

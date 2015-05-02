@@ -6,9 +6,8 @@ android:layout_height="match_parent"
 tools:context=".MainActivity"
 tools:ignore="MergeRootFrame"
  style="@style/Base.TextAppearance.AppCompat.Title"
- android:background="#ffff921f"
+ android:background="#ffff791f"
  android:textFilterEnabled="true"
  android:touchscreenBlocksFocus="false"
- android:visibility="visible"
-    />
+ android:visibility="visible" />
 

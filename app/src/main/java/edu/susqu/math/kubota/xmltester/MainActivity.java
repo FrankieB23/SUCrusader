@@ -24,6 +24,7 @@ public class MainActivity extends ListActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        
         adapter = new ArrayAdapter<RssItem>(
                 this, android.R.layout.simple_list_item_1,
                 items);
@@ -36,8 +37,9 @@ public class MainActivity extends ListActivity {
     @Override
     public void onListItemClick(ListView l, View v, int position, long id) {
         RssItem r = (RssItem) getListAdapter().getItem(position);
-        Intent i = new Intent (MainActivity.this, GetIntent.class);
-        i.putExtra("Content",position);
+        Intent i = new Intent (MainActivity.this, CrusaderActivity.class);
+        i.putExtra("Content", String.valueOf(items.get(position)));
+
         startActivity(i);
 
 
@@ -111,6 +113,9 @@ public class MainActivity extends ListActivity {
                 items.add(item);
             }
             adapter.notifyDataSetChanged();
+            Log.d("SUCrusader_D", "# items is " + items.size());
+
+
         }
     }
 }
