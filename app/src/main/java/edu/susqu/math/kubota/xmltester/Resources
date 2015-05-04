@@ -15,3 +15,6 @@ http://www.vogella.com/tutorials/AndroidStylesThemes/article.html
 http://www.w3.org/Style/styling-XML
 https://www.bing.com/videos/search?q=how+to+style+with+android+styles.xml&FORM=VIRE1#view=detail&mid=AC09525B2CC6B7CE11B2AC09525B2CC6B7CE11B2
 http://developer.android.com/tools/support-library/index.html
+
+    <string name="app_name">XmlTester</string>
+     <string name="title_activity_crusader_pager">CrusaderPagerActivity</string>

@@ -1,9 +1,11 @@
 package edu.susqu.math.kubota.xmltester;
 
+import java.io.Serializable;
+
 /**
  * Created by kubota on 3/20/2015.
  */
-public class RssItem {
+public class RssItem implements Serializable {
     final static String ITEM_TAG = "item";
     final static String TITLE_TAG = "title";
     final static String LINK_TAG = "link";
@@ -61,9 +63,9 @@ public class RssItem {
     //@Override
     public String toString() {
         return category + "\n" + title + "\n" + pubDate +
-                "\n"+
+                "\n";
         //"\nLink=" + link
-         "\npubDate="  +  pubDate +"\n";   // content == article ...
+    //"\npubDate="  +  pubDate +"\n";   // content == article ...
         /** "\nCategory=" +  category + "\"  + "Title="    title +  "\npubDate="  +  pubDate +
          "\n"; */
           }

@@ -24,21 +24,20 @@ public class MainActivity extends ListActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        
+
         adapter = new ArrayAdapter<RssItem>(
-                this, android.R.layout.simple_list_item_1,
+                MainActivity.this, android.R.layout.simple_list_item_1,
                 items);
         setListAdapter(adapter);
-        this.
-                new FetchItemsTask().execute();
+        this.new FetchItemsTask().execute();
     }
 
 
     @Override
     public void onListItemClick(ListView l, View v, int position, long id) {
         RssItem r = (RssItem) getListAdapter().getItem(position);
-        Intent i = new Intent (MainActivity.this, CrusaderActivity.class);
-        i.putExtra("Content", String.valueOf(items.get(position)));
+        Intent i = new Intent (this, CrusaderActivity.class);
+        i.putExtra("Content", items.get(position));
 
         startActivity(i);
 
@@ -74,7 +73,7 @@ public class MainActivity extends ListActivity {
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_main, menu);
+        getMenuInflater().inflate(R.menu.menu_crusader_list, menu);
         return true;
     }
 
